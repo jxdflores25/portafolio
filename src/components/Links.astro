@@ -1,0 +1,10 @@
+---
+interface Props {
+	navegacion: string;
+    titulo: string;
+}
+
+const { navegacion , titulo} = Astro.props;
+---
+
+<a href={navegacion} class=" hover:font-bold hover:bg-[#242422]/20  px-3 py-1 hover:rounded-full">{titulo}</a>
