@@ -1,0 +1,38 @@
+---
+import DataAnalytics from "../icons/DataAnalytics.astro";
+import ProyectoItem from "../components/ProyectosItem.astro";
+---
+
+<section id="Proyectos" class="static mt-10 flex justify-center items-center">
+  <div class="w-[950px] flex flex-col">
+    <h2 class="flex gap-3 font-bold text-3xl p-3">
+      <DataAnalytics class="size-10" /> Proyectos
+    </h2>
+    <ProyectoItem>
+      <img
+        src="Proyecto1.webp"
+        alt="Este es el primer proyecto"
+        class="rounded-xl w-full"
+        slot="imagen"
+      />
+      <h3 class="font-bold text-xl">
+        Visualizador de vistas de página en determinados períodos de tiempo
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
+        laboriosam illo dolorum, voluptatem labore libero perspiciatis porro
+        modi dolore quae ipsa amet maiores id vel consequuntur autem fuga ab?
+        Reiciendis.
+      </p>
+    </ProyectoItem>
+    <ProyectoItem>
+      <img
+        src="Proyecto2.webp"
+        alt="Este es el Segundo proyecto"
+        class="rounded-xl w-full"
+        slot="imagen"
+      />
+      <h3 class="font-bold text-xl">Visualizador de datos médicos</h3>
+    </ProyectoItem>
+  </div>
+</section>

@@ -1,18 +1,14 @@
 ---
-import Links from "./links.astro"
+import Links from "./Links.astro";
 ---
 
-<nav class=" flex flex-row justify-around items-center p-2">
-    <h1 class=" font-bold text-xl  flex justify-center p-2 ">JHORDY ROLDAN</h1>
-    <div class=" flex gap-x-4 justify-center font-semibold">
-        <Links navegacion="#" titulo="Sobre mí" />
-        <Links navegacion="#" titulo="Proyectos" />
-        <Links navegacion="#" titulo="Certificaciones" />
+<header id="header-nav" class="fixed top-0 z-10 p-2 flex w-full">
+  <nav class="flex flex-row justify-around items-center w-full">
+    <h1 class="font-bold text-xl flex justify-center p-2">JHORDY ROLDAN</h1>
+    <div class="flex gap-x-4 justify-center font-semibold">
+      <Links navegacion="#" titulo="Sobre mí" />
+      <Links navegacion="#Proyectos" titulo="Proyectos" />
+      <Links navegacion="#" titulo="Certificaciones" />
     </div>
-</nav>
-
-<div>
-    <picture>
-        <img src="" alt="">
-    </picture>
-</div>
+  </nav>
+</header>
