@@ -1,5 +1,9 @@
+---
+const { href } = Astro.props;
+---
+
 <li class={Astro.props.class}>
-    <a href="">
-       <slot />
-    </a>
+  <a href={href} target="_blank">
+    <slot />
+  </a>
 </li>

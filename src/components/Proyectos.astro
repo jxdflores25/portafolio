@@ -1,6 +1,14 @@
 ---
+//components
 import DataAnalytics from "../icons/DataAnalytics.astro";
 import ProyectoItem from "../components/ProyectosItem.astro";
+import ProyectoPill from "../components/ProyectoPill.astro";
+
+//icons
+import PandasICon from "../icons/Pandas.astro";
+import NumPyIcon from "../icons/NumPy.astro";
+import MatplotlibIcon from "../icons/Matplotlib.astro";
+import PythonIcon from "../icons/Python.astro";
 ---
 
 <section id="Proyectos" class="static mt-10 flex justify-center items-center">
@@ -18,6 +26,20 @@ import ProyectoItem from "../components/ProyectosItem.astro";
       <h3 class="font-bold text-xl">
         Visualizador de vistas de página en determinados períodos de tiempo
       </h3>
+      <div class="flex gap-x-2 my-2">
+        <ProyectoPill name="Pandas" class="bg-[#1e415e] text-white">
+          <PythonIcon class="size-5" />
+        </ProyectoPill>
+        <ProyectoPill name="Pandas" class="bg-[#130654] text-white">
+          <PandasICon class="size-5" />
+        </ProyectoPill>
+        <ProyectoPill name="Numpy" class="bg-black text-white">
+          <NumPyIcon class="size-5" />
+        </ProyectoPill>
+        <ProyectoPill name="Matplotlib" class="bg-black text-white">
+          <MatplotlibIcon class="size-5" />
+        </ProyectoPill>
+      </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
         laboriosam illo dolorum, voluptatem labore libero perspiciatis porro
