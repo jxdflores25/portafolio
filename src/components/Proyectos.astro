@@ -4,57 +4,57 @@ import DataAnalytics from "../icons/DataAnalytics.astro";
 import ProyectoItem from "../components/ProyectosItem.astro";
 import ProyectoPill from "../components/ProyectoPill.astro";
 
-//icons
-import PandasICon from "../icons/Pandas.astro";
-import NumPyIcon from "../icons/NumPy.astro";
-import MatplotlibIcon from "../icons/Matplotlib.astro";
-import PythonIcon from "../icons/Python.astro";
+//data
+import { PROJECTS } from "../Data/ProjectosDatos.js";
+
+//icon
+import GithubIcon from "../icons/Github.astro";
+import ColabIcon from "../icons/Colab.astro";
 ---
 
 <section id="Proyectos" class="static mt-10 flex justify-center items-center">
-  <div class="w-[950px] flex flex-col">
+  <article class="w-[950px] flex flex-col">
     <h2 class="flex gap-3 font-bold text-3xl p-3">
       <DataAnalytics class="size-10" /> Proyectos
     </h2>
-    <ProyectoItem>
-      <img
-        src="Proyecto1.webp"
-        alt="Este es el primer proyecto"
-        class="rounded-xl w-full"
-        slot="imagen"
-      />
-      <h3 class="font-bold text-xl">
-        Visualizador de vistas de página en determinados períodos de tiempo
-      </h3>
-      <div class="flex gap-x-2 my-2">
-        <ProyectoPill name="Pandas" class="bg-[#1e415e] text-white">
-          <PythonIcon class="size-5" />
-        </ProyectoPill>
-        <ProyectoPill name="Pandas" class="bg-[#130654] text-white">
-          <PandasICon class="size-5" />
-        </ProyectoPill>
-        <ProyectoPill name="Numpy" class="bg-black text-white">
-          <NumPyIcon class="size-5" />
-        </ProyectoPill>
-        <ProyectoPill name="Matplotlib" class="bg-black text-white">
-          <MatplotlibIcon class="size-5" />
-        </ProyectoPill>
-      </div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
-        laboriosam illo dolorum, voluptatem labore libero perspiciatis porro
-        modi dolore quae ipsa amet maiores id vel consequuntur autem fuga ab?
-        Reiciendis.
-      </p>
-    </ProyectoItem>
-    <ProyectoItem>
-      <img
-        src="Proyecto2.webp"
-        alt="Este es el Segundo proyecto"
-        class="rounded-xl w-full"
-        slot="imagen"
-      />
-      <h3 class="font-bold text-xl">Visualizador de datos médicos</h3>
-    </ProyectoItem>
-  </div>
+    {
+      PROJECTS.map(({ image, title, description, tags, github, colab }) => (
+        <ProyectoItem>
+          <img
+            src={image}
+            alt={title}
+            class="rounded-xl w-full"
+            slot="imagen"
+          />
+          <h3 class="font-bold text-xl">{title}</h3>
+          <div class="flex gap-x-2 my-2">
+            {tags.map((tag) => (
+              <ProyectoPill name={tag.name} class={tag.class}>
+                <tag.icon class="size-5" />
+              </ProyectoPill>
+            ))}
+          </div>
+          <p>{description}</p>
+          <footer class="flex items-end justify-start mt-2 gap-x-2">
+            {github && (
+              <a
+                href={github}
+                class=" flex gap-x-2 items-center bg-black/70 p-2 rounded-2xl text-white font-medium border-2 transition duration-300 ease-in-out hover:scale-105"
+                target="_blank">
+                <GithubIcon class="size-8 " /> Github
+              </a>
+            )}
+            {colab && (
+              <a
+                href={colab}
+                class=" flex gap-x-2 items-center bg-black/70 p-2 rounded-2xl text-white font-medium border-2 transition duration-300 ease-in-out hover:scale-105"
+                target="_blank">
+                <ColabIcon class="size-8 " /> Colab
+              </a>
+            )}
+          </footer>
+        </ProyectoItem>
+      ))
+    }
+  </article>
 </section>
