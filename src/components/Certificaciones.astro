@@ -1,0 +1,50 @@
+---
+//data
+import { CERTIFICATE } from "../Data/CertificacionesDatos.js";
+
+//icon
+import CertificacionIcon from "../icons/Certificacion.astro";
+import CertificacionBNIcon from "../icons/CertificacionBN.astro";
+---
+
+<section id="Proyectos" class="static mt-10 flex justify-center items-center">
+  <article class="w-[950px] flex flex-col">
+    <h2 class="flex gap-3 font-bold text-3xl p-3">
+      <CertificacionIcon class="size-10" />Certificaciones
+    </h2>
+    <ol class="relative border-s border-[#242422] w-[950px] mt-5">
+      {
+        CERTIFICATE.map(({ time, title, organization, description, link }) => (
+          <li class="mb-10 ms-4">
+            <div class="absolute size-4 bg-[#242422] rounded-full mt-1.5 -start-2 border border-white" />
+            <time class="mb-1 text-base font-bold leading-none text-[#242422]">
+              {time}
+            </time>
+            <section class="flex">
+              <div class="w-1/3">
+                <h3 class="text-lg font-semibold text-[#242422]">{title}</h3>
+                <h4 class="text-sm font-semibold text-[#242422]/80">
+                  {organization}
+                </h4>
+              </div>
+
+              <div class="flex flex-col w-2/3">
+                <p class="mb-4 text-base font-normal text-gray-500">
+                  {description}
+                </p>
+                <footer class="flex  justify-start ">
+                  <a
+                    href={link}
+                    class=" flex items-center bg-black/70 p-2 rounded-2xl text-white font-medium border-2 transition duration-300 ease-in-out hover:scale-105 "
+                    target="_blank">
+                    <CertificacionBNIcon /> Credencial
+                  </a>
+                </footer>
+              </div>
+            </section>
+          </li>
+        ))
+      }
+    </ol>
+  </article>
+</section>

@@ -1,6 +1,6 @@
 ---
 //components
-import DataAnalytics from "../icons/DataAnalytics.astro";
+
 import ProyectoItem from "../components/ProyectosItem.astro";
 import ProyectoPill from "../components/ProyectoPill.astro";
 
@@ -10,6 +10,7 @@ import { PROJECTS } from "../Data/ProjectosDatos.js";
 //icon
 import GithubIcon from "../icons/Github.astro";
 import ColabIcon from "../icons/Colab.astro";
+import DataAnalytics from "../icons/DataAnalytics.astro";
 ---
 
 <section id="Proyectos" class="static mt-10 flex justify-center items-center">
@@ -35,7 +36,7 @@ import ColabIcon from "../icons/Colab.astro";
             ))}
           </div>
           <p>{description}</p>
-          <footer class="flex items-end justify-start mt-2 gap-x-2">
+          <footer class="flex justify-start mt-2 gap-x-2">
             {github && (
               <a
                 href={github}
