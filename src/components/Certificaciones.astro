@@ -9,28 +9,28 @@ import CertificacionBNIcon from "../icons/CertificacionBN.astro";
 
 <section
   id="Certificaciones"
-  class="static mt-14 flex justify-center items-center">
-  <article class="md:w-[650px] lg:w-[950px] flex flex-col">
+  class="static mt-14 flex justify-center items-center w-full p-5">
+  <article class="md:w-[650px] lg:w-[950px] flex flex-col w-full">
     <h2 class="flex gap-3 font-bold text-3xl p-3">
       <CertificacionIcon class="size-10" />Certificaciones
     </h2>
-    <ol class="relative border-s border-[#242422] w-[950px] mt-5">
+    <ol class="relative border-s border-[#242422] mt-5 mx-5">
       {
         CERTIFICATE.map(({ time, title, organization, description, link }) => (
-          <li class="mb-10 ms-4">
+          <li class=" mb-10 ms-4 w-full">
             <div class="absolute size-4 bg-[#242422] rounded-full mt-1.5 -start-2 border border-white" />
             <time class="mb-1 text-base font-bold leading-none text-[#242422]">
               {time}
             </time>
-            <section class="flex flex-col lg:flex-row">
-              <div class="w-1/3">
+            <section class="flex flex-col md:flex-row lg:flex-row ">
+              <div class="lg:w-1/3">
                 <h3 class="text-lg font-semibold text-[#242422]">{title}</h3>
                 <h4 class="text-sm font-semibold text-[#242422]/80">
                   {organization}
                 </h4>
               </div>
 
-              <div class="flex flex-col w-2/3 md:mt-2">
+              <div class="flex flex-col lg:w-2/3 mt-5 md:mt-2">
                 <p class="mb-4 text-base font-normal ">{description}</p>
                 <footer class="flex  justify-start ">
                   <a
